@@ -50,8 +50,8 @@ class Banner:
         print ''
         print " Graham's password generating script v1.3.1 "
         print ''
-        print ' Usage: password.py <password length 3-10> [--quiet]'
-        print ' Sadly we only support a password length between 3 and 10 words\n'
+        print ' Usage: password.py <password length 3-100> [--quiet]'
+        print ' Sadly we only support a password length between 3 and 100 words\n'
         print ''
 
 
@@ -59,11 +59,11 @@ __all__ = ['Password']
 
 if __name__ == '__main__':
 
-    if len(sys.argv) == 3 and int(sys.argv[1]) > 2 and int(sys.argv[1]) < 11 and sys.argv[2] == '--quiet':
+    if len(sys.argv) == 3 and int(sys.argv[1]) > 2 and int(sys.argv[1]) < 101 and sys.argv[2] == '--quiet':
 
         print Password(int(sys.argv[1])).short()
 
-    elif len(sys.argv) == 2 and int(sys.argv[1]) > 2 and int(sys.argv[1]) < 11:
+    elif len(sys.argv) == 2 and int(sys.argv[1]) > 2 and int(sys.argv[1]) < 101:
 
         password = Password(int(sys.argv[1]))
         Banner.display(password.short(), password.long())
